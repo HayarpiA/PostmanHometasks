@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "d0330512-3c0b-4d96-8ab2-b624dc78dac1",
+		"name": "Hometask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18460945"
+	},
+	"item": [
+		{
+			"name": "Postive Cases",
+			"item": [
+				{
+					"name": "Get_Employees",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"/*pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+									"    console.log(response.json());\r",
+									"});*/\r",
+									"//pm.globals.unset(\"DB\");\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base-URL}}/prod",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"prod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Employees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Base-URL}}/employees",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Employees",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"id\": 2,\r\n      \"first_name\": \"Steve\",\r\n      \"last_name\": \"Palmer\",\r\n      \"email\": \"steve@codingthesmartway.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/employees/2",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial_Update_Employees",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"address\": \"Baker street 215\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/employees/1",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employees",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base-URL}}/employees/4",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative Cases",
+			"item": [
+				{
+					"name": "Get_Employees_404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base-URL}}/coworkers",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"coworkers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_employees_500",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/employees",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_employees_400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/employees",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_employees_400",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"id\": 14,\r\n      \"first_name\": \"Katerina\",\r\n      \"last_name\": \"Gabrielyan\",\r\n      \"email: \"katerinag@yopmail.com\"\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/employees/4",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial_Update_400",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"id\": \"5\",\r\n      \"first_name\": Anush,\r\n      \"last_name\": \"Khachatryan\",\r\n      \"email\": \"anushk@yopmail.com\"\r\n    },",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/employees/5",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove_Employee_404",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base-URL}}/employees/75",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"employees",
+								"75"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Variables",
+			"item": [
+				{
+					"name": "create_users_dyn_var",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first-name\":\"{{first-name}}\",\r\n    \"last-name\":\"{{last-name}}\",\r\n    \"email\":\"{{email}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/users",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_users_data_var",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first-name\":\"{{first-name}}\",\r\n    \"last-name\":\"{{last-name}}\",\r\n    \"email\":\"{{email}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/users",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_users_preRequestSript",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.environment.set(\"address\", \"Test St.123\");\r",
+									"pm.globals.set(\"Name\", \"DB\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first-name\":\"{{first-name}}\",\r\n    \"last-name\":\"{{last-name}}\",\r\n    \"email\":\"{{email}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base-URL}}/{{stage}}",
+							"host": [
+								"{{Base-URL}}"
+							],
+							"path": [
+								"{{stage}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first-name\":\"{{first-name}}\",\r\n    \"last-name\":\"{{last-name}}\",\r\n    \"email\":\"{{email}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Get_commandInfo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log(pm.response)\r",
+									"pm.test(\"Status code name has string\", function (){\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 100ms\", function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(150);\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.test(\"check body\", () => {\r",
+									"    pm.expect(jsonData).to.be.an(\"object\")\r",
+									"});\r",
+									"pm.test(\"check keys\", () => {\r",
+									"    const keys = [\"name\", \"description\", \"roles\", \"actions\"];\r",
+									"     pm.expect(jsonData).to.have.all.keys(keys);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"name\",\"description\",\"roles\", \"actions\");\r",
+									"});\r",
+									"pm.test(\"check value\", () => {\r",
+									"    pm.expect(jsonData[\"description\"]).to.be.eql(\"Gets data from the table\");\r",
+									"});\r",
+									"pm.test(\"check value\", () => {\r",
+									"    pm.expect(jsonData[\"name\"]).to.be.eql(\"QAReaderGetDataSnowflake\");\r",
+									"});\r",
+									"pm.test(\"check value\", () => {\r",
+									"    pm.expect([jsonData.name,jsonData.description]).to.be.eql([\"QAReaderGetDataSnowflake\",\"Gets data from the table\"]);\r",
+									"});\r",
+									"pm.test(\"check actions\", () => {\r",
+									"    pm.expect(jsonData.actions).to.be.an(\"array\");\r",
+									"    pm.expect(jsonData.actions[0].name).to.be.eql(\"QAReaderGetDataSnowflake\");\r",
+									"    pm.expect(jsonData.actions[0].isPrimary) === true;\r",
+									"    pm.expect(jsonData.actions[0].description).to.be.eql(\"Gets data from the table\"); \r",
+									"    pm.expect(jsonData.actions[0].dataSourceType.name).to.be.eql(\"Snowflake\");\r",
+									"    pm.expect(jsonData.actions[0].dataSourceType.driver).to.be.eql(\"SnowFlake\");\r",
+									"    pm.expect(jsonData.actions[0].dataSourceType.dataSources[0].name).to.be.eql(\"snowflake_db\");\r",
+									"    pm.expect(jsonData.actions[0].dataSourceType.dataSources[0].environments[0].name).to.be.eql(\"us-dev1\");\r",
+									"    pm.expect(jsonData.actions[0].dataSourceType.dataSources[0].environments[1].name).to.be.eql(\"us-qa1\");\r",
+									"    pm.expect(jsonData.actions[0].parameters[0].type) === 2;\r",
+									"    pm.expect(jsonData.actions[0].parameters[0].name).to.be.eql(\"StringValue\");\r",
+									"    pm.expect(jsonData.actions[0].parameters[0].isOptional)=== false;\r",
+									"    pm.expect(jsonData.actions[0].parameters[0].description).to.be.eql(\"String value\");\r",
+									"    pm.expect(jsonData.actions[0].parameters[0].validation).to.be.eql(\"Type: String, Non-nullable, Length: 20, Format: \\\\w+\");\r",
+									"    pm.expect(jsonData.actions[0].parameters[1].type) === 1; //doesn't fail if changeing the value to any int.\r",
+									"    pm.expect(jsonData.actions[0].parameters[1].name).to.be.eql(\"IntegerValue\");\r",
+									"    pm.expect(jsonData.actions[0].parameters[1].isOptional)=== false;\r",
+									"    pm.expect(jsonData.actions[0].parameters[1].description).to.be.eql(\"Integer value\");\r",
+									"    pm.expect(jsonData.actions[0].parameters[1].validation).to.be.eql(\"Type: Integer, Non-nullable, Min: 0, Max: 100\");\r",
+									"    pm.expect(jsonData.actions[0].outputType).to.eql(null);\r",
+									"    pm.expect(jsonData.actions[0].timeout) === 30; //doesn't fail if changeing the value to any int.\r",
+									"    pm.expect(jsonData.actions[0].hideInResponse)=== false;\r",
+									"    pm.expect(jsonData.actions[0].defaultDataSource).to.eql(null);\r",
+									"    pm.expect(jsonData.actions[0].defaultEnvironment).to.eql(null);\r",
+									"    });\r",
+									"pm.test(\"check parameters\", () => {\r",
+									"    _.each(jsonData.parameters,(item)=> {pm.expect(item).to.be.an(\"object\");console.log(item)});\r",
+									"});\r",
+									"pm.test(\"check value\", () => {\r",
+									"    const name =[\"IntegerValue\",\"FloatType\",\"DateType\",\"ParameterForArrayCheck\"]\r",
+									"    let array = [];\r",
+									"    \r",
+									"    for (let i=0; i<jsonData.actions[0].parameters.Length; i++) { \r",
+									"        // array[i] += parameters[i]\r",
+									"        // console.log(array)\r",
+									"        pm.expect(jsonData.parameters[i].name).to.be.eql(name[i]);}\r",
+									"}\r",
+									");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/commandInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commandInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base-URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

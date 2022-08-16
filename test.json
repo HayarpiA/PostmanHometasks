@@ -1,0 +1,76 @@
+{
+    "commandInfo": {
+        "name": "QAReaderGetDataSnowflake",
+        "description": "Gets data from the table",
+        "roles": [
+            "j7DAG8XKfD0C2yYt"
+        ],
+        "actions": [
+            {
+                "name": "QAReaderGetDataSnowflake",
+                "isPrimary": true,
+                "description": "Gets data from the table",
+                "dataSourceType": {
+                    "name": "Snowflake",
+                    "driver": "SnowFlake",
+                    "dataSources": [
+                        {
+                            "name": "snowflake_db",
+                            "environments": [
+                                {
+                                    "name": "us-dev1"
+                                },
+                                {
+                                    "name": "us-qa1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "parameters": [
+                    {
+                        "type": 2,
+                        "name": "StringValue",
+                        "isOptional": false,
+                        "description": "String value",
+                        "validation": "Type: String, Non-nullable, Length: 20, Format: \\w+"
+                    },
+                    {
+                        "type": 1,
+                        "name": "IntegerValue",
+                        "isOptional": false,
+                        "description": "Integer value",
+                        "validation": "Type: Integer, Non-nullable, Min: 0, Max: 100"
+                    },
+                    {
+                        "type": 16,
+                        "name": "FloatType",
+                        "isOptional": false,
+                        "description": "Float value",
+                        "validation": "Type: Float, Non-nullable, Min: None, Max: None"
+                    },
+                    {
+                        "type": 8,
+                        "name": "DateType",
+                        "isOptional": false,
+                        "description": "Date value",
+                        "validation": "Type: DateTime, Non-nullable, Min: 2022-01-01T00:00:00Z, Max: None"
+                    },
+                    {
+                        "type": 65537,
+                        "name": "ParameterForArrayCheck",
+                        "isOptional": false,
+                        "description": "Parameter for array check",
+                        "validation": "Type: IntegerArray, Non-nullable, Max length: None\nElements Type: Integer, Non-nullable, Min: 0, Max: 1000"
+                    }
+                ],
+                "outputParameters": [],
+                "outputType": null,
+                "timeout": 30,
+                "hideInResponse": false,
+                "defaultDataSource": null,
+                "defaultEnvironment": null
+            }
+        ]
+    }
+}

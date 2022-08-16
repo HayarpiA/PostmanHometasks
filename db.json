@@ -1,0 +1,181 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com",
+      "address": "Baker street 215"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com"
+    },
+    {
+      "first-name": "{{first-name}}",
+      "last-name": "{{last-name}}",
+      "email": "sebastian@codingthesmartway.com",
+      "id": 4
+    },
+    {
+      "first-name": "{{first-name}}",
+      "last-name": "{{last-name}}",
+      "email": "steve@codingthesmartway.com",
+      "id": 5
+    },
+    {
+      "first-name": "{{first-name}}",
+      "last-name": "{{last-name}}",
+      "email": "ann@codingthesmartway.com",
+      "id": 6
+    },
+    {
+      "first-name": "{{first-name}}",
+      "last-name": "{{last-name}}",
+      "email": "{{email}}",
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "first-name": "Jane",
+      "last-name": "Smith",
+      "email": "jsmith@yopmail.com",
+      "id": 14
+    },
+    {
+      "first-name": "Jorge",
+      "last-name": "Ducke",
+      "email": "jducke@yopmail.com",
+      "id": 15
+    }
+  ],
+  "qa": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com"
+    },
+    {
+      "first-name": "{{first-name}}",
+      "last-name": "{{last-name}}",
+      "email": "{{email}}",
+      "id": 4
+    },
+    {
+      "first-name": "{{first-name}}",
+      "last-name": "{{last-name}}",
+      "email": "{{email}}",
+      "id": 5
+    }
+  ],
+  "stage": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com"
+    }
+  ],
+  "prod": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com"
+    }
+  ]
+}
